@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './index.css';
 import Cardapio from './pages/Cardapio';
+import { Inicio } from 'pages/Inicio';
+import { AppRouter } from 'routes';
+
+const paginaAtual = window.location.pathname === '/' ? <Inicio /> : <Cardapio />;
 
 ReactDOM.render(
   <React.StrictMode>
-    <Cardapio />
+    <AppRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );
