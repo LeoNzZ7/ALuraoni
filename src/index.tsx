@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
-import './index.css';
-import Cardapio from './pages/Cardapio';
-import { Inicio } from 'pages/Inicio';
+import './index.css';;
 import { AppRouter } from 'routes';
-
-const paginaAtual = window.location.pathname === '/' ? <Inicio /> : <Cardapio />;
+import { Menu } from 'components/menu';
 
 ReactDOM.render(
   <React.StrictMode>
