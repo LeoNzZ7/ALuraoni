@@ -6,6 +6,7 @@ import { DefaulPage } from "components/defaultPage"
 import { Sobre } from "pages/sobre"
 import { Footer } from "pages/footer"
 import { NotFound } from "pages/notFound"
+import { Prato } from "pages/prato"
 
 export const AppRouter = () => {
     return(
@@ -16,8 +17,9 @@ export const AppRouter = () => {
                 <Route path="/" element={<DefaulPage />}>
                     <Route index element={<Inicio/>} /> 
                     <Route path="cardapio" element={<Cardapio />} />
-                    <Route path="/sobre" element={<Sobre />} />
+                    <Route path="sobre" element={<Sobre />} />
                 </Route>
+                <Route path="prato/:id" element={<Prato />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
