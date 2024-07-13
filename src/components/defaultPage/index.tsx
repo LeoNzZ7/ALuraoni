@@ -1,8 +1,9 @@
+import React, { ReactNode } from 'react'
 import styles from './defaultPage.module.scss'
 import { Outlet } from 'react-router-dom'
 import stylesTema from 'styles/tema.module.scss'
 
-export const DefaulPage = () => {
+export const DefaulPage = ({ children }: { children?: React.ReactNode }) => {
     return (
         <>
             <header className={styles.header}>
@@ -12,6 +13,7 @@ export const DefaulPage = () => {
             </header>
             <div className={stylesTema.container} >
                 <Outlet />
+                {children}
             </div>
         </>
     )

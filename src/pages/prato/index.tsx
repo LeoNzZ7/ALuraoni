@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import cardapio from "data/cardapio.json"
 import { DefaulPage } from "components/defaultPage"
 import { TagsPrato } from "components/tagsPrato"
+import { NotFound } from "components/notFound"
 
 export const Prato = () => {
     const { id } = useParams();
@@ -11,12 +12,11 @@ export const Prato = () => {
     const prato = cardapio.find(item => item.id === Number(id));
 
     if (!prato) {
-        return ``;
+        return <NotFound />;
     };
 
     return (
-        <>
-            <DefaulPage />
+        <DefaulPage>
             <button className={styles.voltar} onClick={() => navigate(-1)} >
                 Voltar
             </button >
@@ -34,6 +34,6 @@ export const Prato = () => {
                     <TagsPrato {...prato} />
                 </div>
             </section>
-        </>
+        </DefaulPage>
     )
 }
